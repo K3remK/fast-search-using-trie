@@ -12,3 +12,6 @@ Makefile
 # Output files
 out.txt
 output.txt
+
+#IDE
+/.vscode
