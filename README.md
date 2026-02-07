@@ -34,6 +34,52 @@ A Trie organizes words by their characters, creating a tree where each path repr
 
 *\* Tries can use more memory than arrays due to node pointers, but they effectively compress shared prefixes.*
 
+## 📖 Usage Guide
+
+### 📂 File Structure
+
+#### 1. Dictionary File (`dictionary.txt`)
+This file contains the words that build up the Trie.
+-   **First Line**: The total count of words in the file.
+-   **Subsequent Lines**: Each line contains a single word.
+
+**Example `dictionary.txt`:**
+```text
+3
+apple
+app
+apricot
+```
+
+#### 2. Input Commands File (`input.txt`)
+This file contains the operations you want to perform.
+-   **First Line**: The total number of commands to execute.
+-   **Subsequent Lines**: formats are `command argument`.
+
+**Supported Commands:**
+1.  **`search <word>`**: Checks if the exact word exists in the dictionary.
+    -   *Output*: `true` or `false`.
+2.  **`prefix <string>`**: Finds ALL words in the dictionary that start with the given string.
+    -   *Output*: A list of matching words separated by spaces.
+
+**Example `input.txt`:**
+```text
+2
+search apple
+prefix ap
+```
+
+#### 3. Output File (`out.txt`)
+The results of the commands are written here.
+
+**Example Output:**
+```text
+true
+apple app apricot
+```
+
+---
+
 ## 🛠️ Build System
 
 This project uses **CMake** as its build system, ensuring cross-platform compatibility and easy build management.
@@ -54,12 +100,7 @@ cmake ..
 cmake --build .
 ```
 
-### 2️⃣ Prepare Input Files
-Ensure you have the following files in your project directory (or provide paths to them):
--   📄 `dictionary.txt`: The list of valid words.
--   📄 `input.txt`: The commands to execute (e.g., `search word`, `prefix pre`).
-
-### 3️⃣ Run the Executable
+### 2️⃣ Run the Executable
 The program requires 3 arguments:
 1.  Path to the input file.
 2.  Path to the dictionary file.
@@ -74,5 +115,3 @@ The program requires 3 arguments:
 # Linux / Mac
 ./fast-search-using-trees ../input.txt ../dictionary.txt .
 ```
-
-This will generate an `out.txt` file in the current directory containing the results of your search and prefix queries.
