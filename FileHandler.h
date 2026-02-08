@@ -6,6 +6,7 @@
 #define FAST_SEARCH_USING_TRIES_KEREMKARAMANLIOGLU_FILEHANDLER_H
 
 #include <fstream>
+#include <string>
 #include "Trie.h"
 
 using namespace std;

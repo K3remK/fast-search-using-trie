@@ -45,7 +45,7 @@ void FileHandler::split(const string &line, const char &delim, string *lineArray
  */
 void FileHandler::fillTrie() {
     //string dictionarySize;
-    getline(dictionaryF, dictionarySize);
+    std::getline(dictionaryF, dictionarySize);
     for(int i = 0; i < stoi(dictionarySize); i++) {
         string word;
         getline(dictionaryF, word);
@@ -74,7 +74,7 @@ void FileHandler::applyInstructions() {
                 if(k == length - 1) {
                     outputF << words[k];
                 } else {
-                    outputF << words[k] << " ";
+                    outputF << (words[k] + " ");
                 }
             }
             outputF << endl;

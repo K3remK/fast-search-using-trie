@@ -34,6 +34,43 @@ A Trie organizes words by their characters, creating a tree where each path repr
 
 *\* Tries can use more memory than arrays due to node pointers, but they effectively compress shared prefixes.*
 
+---
+
+## 🛠️ Build System
+
+This project uses **CMake** as its build system, ensuring cross-platform compatibility and easy build management.
+
+### ✅ Requirements
+-   C++17 compiler (GCC, Clang, MSVC)
+-   CMake 3.10 or higher
+
+## 🏃‍♂️ How to Build and Run
+
+### 1️⃣ Build the Project
+I recommend an "out-of-source" build to keep your directory clean.
+
+```bash
+cmake -S . -B build -G "MinGW Makefiles"
+cmake --build build
+```
+*\* Using MinGW Makefiles for cross-platform compatibility. Visual Studio build dosn't work currently. :(*
+
+### 2️⃣ Run the Executable
+The program requires 3 arguments:
+1.  Path to the input file.
+2.  Path to the dictionary file.
+3.  Path to the output directory (where `out.txt` will be created).
+
+**Example (running from the `build` directory):**
+
+```bash
+# Windows
+.\fast-search-using-trees.exe ..\input.txt ..\dictionary.txt .
+
+# Linux / Mac
+./fast-search-using-trees ../input.txt ../dictionary.txt .
+```
+
 ## 📖 Usage Guide
 
 ### 📂 File Structure
@@ -76,42 +113,4 @@ The results of the commands are written here.
 ```text
 true
 apple app apricot
-```
-
----
-
-## 🛠️ Build System
-
-This project uses **CMake** as its build system, ensuring cross-platform compatibility and easy build management.
-
-### ✅ Requirements
--   C++17 compiler (GCC, Clang, MSVC)
--   CMake 3.10 or higher
-
-## 🏃‍♂️ How to Build and Run
-
-### 1️⃣ Build the Project
-I recommend an "out-of-source" build to keep your directory clean.
-
-```bash
-mkdir build
-cd build
-cmake ..
-cmake --build .
-```
-
-### 2️⃣ Run the Executable
-The program requires 3 arguments:
-1.  Path to the input file.
-2.  Path to the dictionary file.
-3.  Path to the output directory (where `out.txt` will be created).
-
-**Example (running from the `build` directory):**
-
-```bash
-# Windows
-.\fast-search-using-trees.exe ..\input.txt ..\dictionary.txt .
-
-# Linux / Mac
-./fast-search-using-trees ../input.txt ../dictionary.txt .
 ```
